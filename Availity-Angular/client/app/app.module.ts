@@ -18,7 +18,7 @@ import { UserRegistrationComponent } from './login/user-registration/user-regist
     BrowserModule,
     SharedModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

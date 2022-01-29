@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from "../../shared/services/http/http.service";
 import {interval, retry, share, startWith, Subscription, switchMap} from "rxjs";
-import {UserModel} from "../../shared/models/UserModel";
 import {UserService} from "../../shared/services/user/user.service";
+import {UserModel} from "../../shared/models/UserModel";
 
 @Component({
   selector: 'app-login-container',
