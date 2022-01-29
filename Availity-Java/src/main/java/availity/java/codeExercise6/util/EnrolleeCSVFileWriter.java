@@ -1,17 +1,15 @@
-package availity.java.util;
+package availity.java.codeExercise6.util;
 
-import availity.java.models.Enrollee;
+import availity.java.codeExercise6.models.Enrollee;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
 import java.io.*;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class EnrolleeCSVFileWriter {
 

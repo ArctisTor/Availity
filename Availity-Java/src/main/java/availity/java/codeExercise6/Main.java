@@ -1,8 +1,7 @@
-package availity.java;
+package availity.java.codeExercise6;
 
-import availity.java.dao.EnrolleeDAO;
+import availity.java.codeExercise6.dao.EnrolleeDAO;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {

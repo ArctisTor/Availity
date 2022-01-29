@@ -1,4 +1,4 @@
-package availity.java.models;
+package availity.java.codeExercise6.models;
 
 
 import lombok.AllArgsConstructor;

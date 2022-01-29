@@ -1,13 +1,12 @@
-package availity.java.dao;
+package availity.java.codeExercise6.dao;
 
-import availity.java.models.Enrollee;
-import availity.java.util.EnrolleeCSVFileWriter;
+import availity.java.codeExercise6.models.Enrollee;
+import availity.java.codeExercise6.util.EnrolleeCSVFileWriter;
 import com.opencsv.CSVReader;
 import lombok.NoArgsConstructor;
 
 import java.io.BufferedReader;
 
-import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
