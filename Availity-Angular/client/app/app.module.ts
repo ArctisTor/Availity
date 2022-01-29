@@ -7,6 +7,7 @@ import {SharedModule} from "./shared/shared.module";
 import {HttpClientModule} from "@angular/common/http";
 import { LoginContainerComponent } from './login/login-container/login-container.component';
 import { UserRegistrationComponent } from './login/user-registration/user-registration.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { UserRegistrationComponent } from './login/user-registration/user-regist
     SharedModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

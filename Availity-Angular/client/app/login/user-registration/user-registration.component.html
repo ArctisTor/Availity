@@ -1,50 +1,114 @@
-<div class="registry-container">
+<form
+  class="registry-container"
+  [formGroup]="userRegistrationForm"
+  (ngSubmit)="register()"
+>
   <div class="registry-title">User Registration</div>
   <div class="registry-name">
-    <div class="registry-first">
+    <div
+      class="registry-first"
+      [ngStyle]="{
+        'color' : userRegistrationForm.get('firstName')!.valid ? '#292927' : '#FD413C'
+      }"
+    >
       First Name:
       <input
         type="search"
+        name="firstName"
+        formControlName="firstName"
         aria-describedby="button-addon1"
         placeholder="Your first name"
+        required
+        [ngStyle]="{
+        'color' : userRegistrationForm.get('firstName')!.valid ? '#292927' : '#FD413C',
+        'border-color': userRegistrationForm.get('firstName')!.valid ? '#F2F2F0' : '#FD413C'
+        }"
       >
     </div>
-    <div class="registry-last">
+    <div
+      class="registry-last"
+      [ngStyle]="{
+        'color' : userRegistrationForm.get('lastName')!.valid ? '#292927' : '#FD413C'
+      }"
+    >
       Last Name:
       <input
         type="search"
+        name="lastName"
+        formControlName="lastName"
         aria-describedby="button-addon1"
         placeholder="Your last name"
+        required
+        [ngStyle]="{
+        'color' : userRegistrationForm.get('lastName')!.valid ? '#292927' : '#FD413C',
+        'border-color': userRegistrationForm.get('lastName')!.valid ? '#F2F2F0' : '#FD413C'
+        }"
       >
     </div>
   </div>
   <div class="registry-businessAddr">
-    <div class="business-item">
+    <div
+      class="business-item"
+      [ngStyle]="{
+        'color' : userRegistrationForm.get('businessAddress')!.valid ? '#292927' : '#FD413C'
+      }"
+    >
       Business Address:
       <input
         type="search"
+        name="businessAddress"
+        formControlName="businessAddress"
         aria-describedby="button-addon1"
         placeholder="Your business address"
+        required
+        [ngStyle]="{
+        'color' : userRegistrationForm.get('businessAddress')!.valid ? '#292927' : '#FD413C',
+        'border-color': userRegistrationForm.get('businessAddress')!.valid ? '#F2F2F0' : '#FD413C'
+        }"
       >
     </div>
   </div>
   <div class="registry-phone">
-    <div class="telephone-item">
+    <div
+      class="telephone-item"
+      [ngStyle]="{
+        'color' : userRegistrationForm.get('telephoneNumber')!.valid ? '#292927' : '#FD413C'
+      }"
+    >
       Telephone:
       <input
         type="search"
+        name="telephoneNumber"
+        formControlName="telephoneNumber"
         aria-describedby="button-addon1"
-        placeholder="(xxx)-xxx-xxxx"
+        placeholder="xxx-xxx-xxxx"
+        required
+        [ngStyle]="{
+        'color' : userRegistrationForm.get('telephoneNumber')!.valid ? '#292927' : '#FD413C',
+        'border-color': userRegistrationForm.get('telephoneNumber')!.valid ? '#F2F2F0' : '#FD413C'
+        }"
       >
     </div>
   </div>
   <div class="registry-email">
-    <div class="email-item">
+    <div
+      class="email-item"
+      [ngStyle]="{
+        'color' : userRegistrationForm.get('email')!.valid ? '#292927' : '#FD413C'
+      }"
+    >
       Email:
       <input
         type="search"
+        name="email"
+        formControlName="email"
         aria-describedby="button-addon1"
         placeholder="yourEmail@email.com"
+        required
+        [ngStyle]="{
+        'color' : userRegistrationForm.get('email')!.valid ? '#292927' : '#FD413C',
+        'border-color': userRegistrationForm.get('email')!.valid ? '#F2F2F0' : '#FD413C'
+        }"
       >
     </div>
   </div>
@@ -53,9 +117,10 @@
       <button
         type="button"
         class="btn btn-primary"
+        [disabled]="!userRegistrationForm.valid"
       >
         Register
       </button>
     </div>
   </div>
-</div>
+</form>

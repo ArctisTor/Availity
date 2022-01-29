@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpService} from "../../shared/services/http/http.service";
 import {interval, retry, share, startWith, Subscription, switchMap} from "rxjs";
 import {UserService} from "../../shared/services/user/user.service";
 import {UserModel} from "../../shared/models/UserModel";
@@ -16,7 +15,6 @@ export class LoginContainerComponent implements OnInit {
   user!: UserModel;
 
   constructor(
-    private http: HttpService,
     private userService: UserService
   ) { }
 

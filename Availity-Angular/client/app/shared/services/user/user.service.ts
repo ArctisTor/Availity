@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpService} from "../http/http.service";
 import {UserModel} from "../../models/UserModel";
+import {FormGroup} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,20 @@ export class UserService {
 
       resolve(null);
     }))
+  }
+
+  registerUser(userRegistrationForm: FormGroup) {
+    return new Promise((resolve, reject) => {
+      resolve(null);
+      //this is where I would hook up to the http service
+      //   this.http.registerUser().subscribe({
+      //     next: (user: any) => {
+      //       resolve(user);
+      //     },
+      //     error: (error: any) => {
+      //       reject(error);
+      //     }
+      //   })
+    })
   }
 }
