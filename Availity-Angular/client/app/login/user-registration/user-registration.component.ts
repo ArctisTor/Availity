@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {UserService} from "../../shared/services/user/user.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 // @ts-ignore
 import {v4 as uuidv4} from 'uuid';
+import {UserModel} from "../../shared/models/UserModel";
+import {augmentAppWithServiceWorker} from "@angular-devkit/build-angular/src/utils/service-worker";
 
 @Component({
   selector: 'app-user-registration',
@@ -12,6 +14,8 @@ import {v4 as uuidv4} from 'uuid';
 export class UserRegistrationComponent implements OnInit {
 
   userRegistrationForm!: FormGroup;
+  @Input() user!: UserModel;
+  @Output() loggedInToken = new EventEmitter<{}>();
 
   emailRegex = '(?:[a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*' +
     '|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@' +
@@ -72,12 +76,16 @@ export class UserRegistrationComponent implements OnInit {
       //this would register the user
       this.userService.registerUser(this.userRegistrationForm)
         .then((result: any)=> {
-
+          this.loggedIn(result);
         });
     } else {
       //it is not valid so don't do anything
       console.log(this.userRegistrationForm.valid)
     }
+  }
+
+   loggedIn(result: any){
+    this.loggedInToken.emit(result);
   }
 
 }

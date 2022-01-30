@@ -29,7 +29,7 @@ export class UserService {
 
   registerUser(userRegistrationForm: FormGroup) {
     return new Promise((resolve, reject) => {
-      resolve(null);
+      resolve({userId: "UserToken"});
       //this is where I would hook up to the http service
       //   this.http.registerUser().subscribe({
       //     next: (user: any) => {

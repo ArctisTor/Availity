@@ -13,6 +13,7 @@ export class LoginContainerComponent implements OnInit {
   scheduler!: Subscription;
   loading = false;
   user!: UserModel;
+  loggedInToken ={}
 
   constructor(
     private userService: UserService
@@ -35,4 +36,7 @@ export class LoginContainerComponent implements OnInit {
       })
   }
 
+  loggedIn(result: any) {
+    this.loggedInToken = result;
+  }
 }
