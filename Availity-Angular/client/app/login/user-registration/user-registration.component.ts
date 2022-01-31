@@ -80,7 +80,6 @@ export class UserRegistrationComponent implements OnInit {
         });
     } else {
       //it is not valid so don't do anything
-      console.log(this.userRegistrationForm.valid)
     }
   }
 
